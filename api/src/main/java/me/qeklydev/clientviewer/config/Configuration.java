@@ -8,7 +8,7 @@ public final class Configuration implements UsableConfiguration {
   @Comment("""
       The format used for the prefix.
       This prefix is used on all plugin messages.""")
-  public String prefix = "<gradient:aqua:green>ClientViewer</gradient> <gray>>";
+  public String prefix = "<aqua>[⭐]</aqua>";
 
   @Comment("""
       If the player client provide a null brand name,
