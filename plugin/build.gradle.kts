@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.shadow)
+    alias(libs.plugins.blossom)
 }
 
 tasks {
@@ -15,6 +16,11 @@ tasks {
             expand("version" to project.version)
         }
     }
+}
+
+blossom {
+  val tokenRoute = "src/main/java/me/qeklydev/clientviewer/Constants.java"
+  replaceToken("{version}", project.version, tokenRoute)
 }
 
 dependencies {
