@@ -1,5 +1,5 @@
 name: ClientViewer
-main: me.qeklydev.transporter.ClientViewerPlugin
+main: me.qeklydev.clientviewer.ClientViewerPlugin
 loader: me.qeklydev.clientviewer.ClientViewerLoader
 authors: [ Qekly ]
 
