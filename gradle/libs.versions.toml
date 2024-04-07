@@ -4,20 +4,12 @@ shadow = "8.1.1"
 spotless = "6.25.0"
 indra = "3.0.1"
 
-# Version declaration for Paper-API.
-paper = "1.19.4-R0.1-SNAPSHOT"
-# Version declaration for MiniMessage.
-minimessage = "4.16.0"
-
 # Version declaration for Configurate.
 configurate = "4.1.2"
 # Version declaration for triumph-cmd.
 command = "2.0.0-SNAPSHOT"
 
 [libraries]
-paper = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
-minimessage = { module = "net.kyori:adventure-text-minimessage", version.ref = "minimessage" }
-
 configurate = { module = "org.spongepowered:configurate-hocon", version.ref = "configurate" }
 command = { module = "dev.triumphteam:triumph-cmd-bukkit", version.ref = "command" }
 
@@ -26,4 +18,3 @@ blossom = { id = "net.kyori.blossom", version.ref = "blossom" }
 shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 indra = { id = "net.kyori.indra", version.ref = "indra" }
-indra-checkstyle = { id = "net.kyori.indra.checkstyle", version.ref = "indra" }
