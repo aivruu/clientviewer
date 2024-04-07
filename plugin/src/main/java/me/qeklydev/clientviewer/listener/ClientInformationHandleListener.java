@@ -1,3 +1,20 @@
+/*
+ * This file is part of clientviewer - https://github.com/aivruu/clientviewer
+ * Copyright (C) 2020-2024 aivruu (https://github.com/aivruu)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
 package me.qeklydev.clientviewer.listener;
 
 import me.qeklydev.clientviewer.config.Configuration;
@@ -33,7 +50,7 @@ public final class ClientInformationHandleListener implements Listener {
     if (event.getResult() != PlayerLoginEvent.Result.ALLOWED) {
       return;
     }
-    final var config = configProvider.get();
+    final var config = this.configProvider.get();
     final var player = event.getPlayer();
     final var playerClientBrand = player.getClientBrandName();
     /*
@@ -79,17 +96,16 @@ public final class ClientInformationHandleListener implements Listener {
      * So, we register it into the clients registry for manipulate
      * that information later as required.
      */
-    this.clientRegistry.register(player.getUniqueId().toString(), playerClientBrand, (short) player.getProtocolVersion());
+    this.clientRegistry.register(player, playerClientBrand, (short) player.getProtocolVersion());
   }
 
   @EventHandler
   void onQuit(final @NotNull PlayerQuitEvent event) {
     final var player = event.getPlayer();
-    final var playerUid = player.getUniqueId().toString();
     /*
      * Remove cached client information for this player
      * to avoid memory leaks.
      */
-    this.clientRegistry.remove(playerUid);
+    this.clientRegistry.remove(player);
   }
 }
