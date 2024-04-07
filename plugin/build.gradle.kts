@@ -26,6 +26,5 @@ blossom {
 dependencies {
     implementation(project(":clientviewer-api"))
 
-    compileOnly(libs.paper)
     compileOnly(libs.command)
 }
